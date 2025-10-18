@@ -1,2 +1,368 @@
 # CURP-biometrica
 Infografía de la CURP Biométrica 2026
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de la CURP Biométrica en México</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            min-height: 100px; /* Aumentado para mejor ajuste */
+        }
+        .flowchart-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            padding: 0 1rem;
+        }
+        .dualidad-card {
+            background-color: #ffe0b2; /* Tono suave que contrasta con el guinda */
+            color: #333;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-blue-900">
+
+    <header class="bg-[#6d0010] text-white text-center py-12 px-4">
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight">La Doble Cara de la CURP Biométrica</h1>
+        <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto">Un análisis de los beneficios prometidos frente a los riesgos inherentes de ciberseguridad de la nueva identidad digital obligatoria en México para 2026.</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="intro" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8 text-center">
+                <h2 class="text-3xl font-bold text-[#6d0010] mb-4">¿Qué es la Nueva CURP Biométrica?</h2>
+                <p class="max-w-4xl mx-auto mb-6 text-lg">
+                    Es la evolución de la Clave Única de Registro de Población que integrará datos biométricos únicos de cada ciudadano. El objetivo es crear un documento de identificación más robusto y centralizado en una Plataforma Única de Identidad (PUI).
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-center">
+                    <div class="flex flex-col items-center p-3 bg-gray-50 rounded-lg">
+                        <span class="text-3xl">👤</span>
+                        <body class="text-dark-800">
+                        <span class="font-bold mt-2">Fotografía</span>
+                        
+                    </div>
+                    <div class="flex flex-col items-center p-3 bg-gray-50 rounded-lg">
+                        <span class="text-3xl">🖐️</span>
+                        <span class="font-bold mt-2">Huellas Dactilares</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 bg-gray-50 rounded-lg">
+                        <span class="text-3xl">👁️</span>
+                        <span class="font-bold mt-2">Escaneo de Iris</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 bg-gray-50 rounded-lg">
+                        <span class="text-3xl">✒️</span>
+                        <span class="font-bold mt-2">Firma Digital</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <section id="Argumentación-Gobierno">
+                <h2 class="text-3xl font-bold text-center mb-6 text-[#58508d]">ARGUMENTO A FAVOR: <span class="block">La Promesa de Modernización</span></h2>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h3 class="text-xl font-bold mb-4">🛡️ Combate al Fraude y la Suplantación</h3>
+                    <p class="mb-4">Al vincular la identidad a características físicas únicas, se busca eliminar la falsificación de documentos en trámites críticos.</p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-red-100 text-red-800 p-4 rounded-lg">
+                            <span class="text-4xl font-black">✗</span>
+                            <h4 class="font-bold mt-2">Identidad Tradicional</h4>
+                            <p class="text-sm">Vulnerable a falsificación</p>
+                        </div>
+                        <div class="bg-green-100 text-green-800 p-4 rounded-lg">
+                            <span class="text-4xl font-black">✓</span>
+                            <h4 class="font-bold mt-2">Identidad Biométrica</h4>
+                            <p class="text-sm">Verificación inconfundible</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">⚙️ Eficiencia Administrativa con la PUI</h3>
+                    <p class="mb-4">La Plataforma Única de Identidad centralizará la información para agilizar y asegurar la validación en tiempo real en diversos sectores.</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-1">
+                        <div class="flex flex-col gap-2">
+                            <div class="flowchart-item bg-[#6d0010] text-white">Bancos</div>
+                            <div class="flowchart-item bg-[#58508d] text-white">Salud</div>
+                            <div class="flowchart-item bg-[#bc5090] text-white">Programas Sociales</div>
+                        </div>
+                        <div class="flowchart-arrow text-[#6d0010] transform md:-rotate-0 rotate-90">➔</div>
+                        <div class="flowchart-item bg-gray-200 text-gray-800 font-bold border-2 border-gray-400 w-full md:w-auto">Plataforma Única de Identidad (PUI)</div>
+                        <div class="flowchart-arrow text-[#6d0010] transform md:-rotate-0 rotate-90">➔</div>
+                        <div class="flowchart-item bg-[#ff6361] text-white font-bold w-full md:w-auto">Validación en Tiempo Real</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Contra-argumento-Ciberseguridad">
+                <h2 class="text-3xl font-bold text-center mb-6 text-[#bc5090]">CONTRA-ARGUMENTO: <span class="block">Los Riesgos de Ciberseguridad</span></h2>
+
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h3 class="text-xl font-bold mb-4">🚨 Punto Único de Falla: Riesgo Inherente y Sistemático</h3>
+                    <p class="mb-4">Centralizar los datos biométricos de toda la población crea un objetivo de altísimo valor ante criminales. Una brecha de seguridad comprometería al país entero.</p>
+                    <div class="chart-container">
+                        <canvas id="riesgoSistemicoChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h3 class="text-xl font-bold mb-4">🔒 Dato Irreversible: La Falla Permanente</h3>
+                    <p class="mb-4">A diferencia de una contraseña, número de teléfono y de otros datos personales se pueden cambiar, un dato biométrico no se puede cambiar, <strong class="font-extrabold">es inmutable</strong>. Si se filtra, la exposición es para siempre.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="p-3 font-bold uppercase text-gray-600 border border-gray-300">Tipo de Dato</th>
+                                    <th class="p-3 font-bold uppercase text-gray-600 border border-gray-300">Acción si es Comprometido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-medium border border-gray-300">Contraseña / Tarjeta de Crédito</td>
+                                    <td class="p-3 text-green-700 font-bold border border-gray-300">Se puede cambiar / revocar</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-medium border border-gray-300">Huella / Iris / Rostro</td>
+                                    <td class="p-3 text-red-700 font-bold border border-gray-300">Exposición PERMANENTE</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- CONSECUENCIAS IRREVERSIBLES -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h3 class="text-2xl font-bold text-[#6d0010] mb-6 text-center">Consecuencias Irreversibles de una Brecha Biometrica</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-red-50 rounded-lg border-l-4 border-[#ff6361] shadow-sm">
+                            <span class="text-2xl block mb-2">🚫</span>
+                            <h4 class="font-bold text-[#6d0010]">Imposibilidad de Revocación</h4>
+                            <p class="text-sm">No se puede "cambiar la huella dactilar" o el "iris". Una vez que esos datos están en manos de cibercriminales (filtrados en la Dark Web), el riesgo de suplantación es <strong class="font-extrabold">permanente</strong> para el usuario.</p>
+                        </div>
+                        <div class="p-4 bg-red-50 rounded-lg border-l-4 border-[#ff6361] shadow-sm">
+                            <span class="text-2xl block mb-2">🔗</span>
+                            <h4 class="font-bold text-[#6d0010]">Riesgo de Vinculación Cruzada</h4>
+                            <p class="text-sm">Si los delincuentes obtienen su huella y su CURP, podrían usarlos para intentar autenticarse en otros sistemas (bancarios, gubernamentales, privados) que adopten la biometría como medio de identificación.</p>
+                        </div>
+                        <div class="p-4 bg-red-50 rounded-lg border-l-4 border-[#ff6361] shadow-sm">
+                            <span class="text-2xl block mb-2">🎭</span>
+                            <h4 class="font-bold text-[#6d0010]">Ataques de Presentación</h4>
+                            <p class="text-sm">Con los datos biométricos filtrados, los atacantes pueden generar "artefactos" (huellas falsas, máscaras 3D o versiones digitales tipo DeepFakes) para engañar a los sistemas de verificación, tanto física como digital.</p>
+                        </div>
+                        <div class="p-4 bg-red-50 rounded-lg border-l-4 border-[#ff6361] shadow-sm">
+                            <span class="text-2xl block mb-2">👁️‍🗨️</span>
+                            <h4 class="font-bold text-[#6d0010]">Amenaza a la Privacidad</h4>
+                            <p class="text-sm">La centralización expone la vida entera del ciudadano (su ubicación, estado civil, historial de salud, etc., vinculados por su CURP) a la posibilidad de ser indexada y explotada por actores maliciosos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h3 class="text-xl font-bold mb-4">📉 Antecedentes de Filtraciones</h3>
+                    <p class="mb-4">La confianza se ve mermada por incidentes pasados que demuestran la vulnerabilidad de las infraestructuras gubernamentales.</p>
+                    <div class="bg-[#ffa600] text-white p-6 rounded-lg">
+                        <div class="text-6xl font-black">20M+</div>
+                        <div class="text-xl font-bold">Registros del IMSS</div>
+                        <div class="mt-1">filtrados y puestos a la venta previamente.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="brecha" class="mt-12">
+            <div class="bg-[#6d0010] text-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-6 text-white">La Brecha Central: Entre la Promesa y la Realidad</h2>
+                <p class="max-w-4xl mx-auto text-center mb-8 text-lg">El éxito del proyecto depende de cerrar la brecha entre los objetivos declarados y la capacidad técnica y de gobernanza real para ejecutarlos de forma segura.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-full text-left border-collapse">
+                        <thead class="bg-[#003f5c] text-white">
+                            <tr>
+                                <th class="p-4 font-bold uppercase border-b-2 border-gray-300">Aspecto</th>
+                                <th class="p-4 font-bold uppercase border-b-2 border-gray-300">Promesa (Deber Ser)</th>
+                                <th class="p-4 font-bold uppercase border-b-2 border-gray-300">Realidad (Es Hoy)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-[#852a39]">
+                                <td class="p-4 font-bold border-b border-[#a03d49]">Gobernanza</td>
+                                <td class="p-4 border-b border-[#a03d49]">Transparencia y auditoría constante por un ente independiente.</td>
+                                <td class="p-4 border-b border-[#a03d49]">Alerta por falta de un <strong class="font-extrabold">órgano supervisor autónomo</strong> con poder real.</td>
+                            </tr>
+                             <tr class="hover:bg-[#852a39]">
+                                <td class="p-4 font-bold border-b border-[#a03d49]">Mitigación de Riesgo</td>
+                                <td class="p-4 border-b border-[#a03d49]">Uso de "plantillas" biométricas irreversibles y cifrado de punta a punta.</td>
+                                <td class="p-4 border-b border-[#a03d49]">Falta de confirmación pública sobre la arquitectura técnica de seguridad.</td>
+                            </p>
+                             <tr class="hover:bg-[#852a39]">
+                                <td class="p-4 font-bold border-b border-[#a03d49]">Aceptación Social</td>
+                                <td class="p-4 border-b border-[#a03d49]">El documento es "voluntario" y agiliza trámites.</td>
+                                <td class="p-4 border-b border-[#a03d49]">La Ley <strong class="font-extrabold">obliga a entes públicos y privados a solicitarla</strong>, volviéndola indispensable de facto.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- APARTADO DE DUALIDAD (Nuevo) -->
+        <section id="dualidad" class="mt-12">
+            <div class="dualidad-card p-6 md:p-8">
+                <h3 class="text-3xl font-black text-[#6d0010] text-center mb-6">La Gran Contradicción: Voluntario vs. Obligatorio</h3>
+                <p class="max-w-4xl mx-auto text-center mb-8 text-lg font-bold">La CURP Biométrica no es "igual de obligatoria", sino que opera bajo una dualidad de la Ley: Ni la CURP alfanumérica tradicional ni la nueva CURP Biométrica son "igual de obligatorias" en el sentido estricto, sino que tienen distintos niveles y alcances de obligatoriedad. El debate surge porque la ley reformada hace dos cosas a la vez: reafirma la validez de la CURP como identificador único y, simultáneamente, la redefine para incluir datos biométricos.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Columna 1: Declaración Política -->
+                    <div class="bg-white p-6 rounded-lg shadow-inner border-t-4 border-[#58508d]">
+                        <h4 class="text-xl font-black text-[#58508d] mb-3">Declaración Política (Ciudadano)</h4>
+                        <p class="text-sm">La Presidenta de México, Claudia Sheinbaum, asegura que la CURP Biométrica <strong class="font-extrabold">no será obligatoria</strong> como identificación oficial. Se enfoca en que la decisión de proporcionar los datos es del ciudadano.</p>
+                        <hr class="my-3">
+                        <p class="text-4xl text-center text-[#58508d] font-black">"Es opcional, la gente decide si da sus datos o no."</p>
+                    </div>
+
+                    <!-- Columna 2: Mandato Legal (Entidades) -->
+                    <div class="bg-white p-6 rounded-lg shadow-inner border-t-4 border-[#ff6361]">
+                        <h4 class="text-xl font-black text-[#ff6361] mb-3">Mandato Legal (Instituciones)</h4>
+                        <p class="text-sm">El Artículo 91 Bis de la Ley General de Población establece que la CURP será el documento nacional de identificación obligatorio y que todo ente público o particular estará obligado a solicitarla. </p>
+                        <hr class="my-3">
+                        <p class="text-4xl text-center text-[#ff6361] font-black">Riesgo: Multas por no aceptarla.</p>
+                    </div>
+                </div>
+
+                <p class="max-w-4xl mx-auto text-center mt-6 text-sm font-bold text-[#6d0010]">
+                    <strong class="font-extrabold">Consecuencia Práctica:</strong> Si las instituciones están obligadas a solicitarla para todo trámite, la CURP Biométrica se convierte en un requisito indispensable y de facto obligatorio para el ciudadano.
+                </p>
+            </div>
+        </section>
+
+        <section id="referencias" class="mt-12 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#6d0010] mb-6 border-b pb-2">Fuentes y Referencias</h2>
+                <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                    <!-- NUEVA FUENTE INSERTADA COMO PUNTO 1 -->
+                    <li>
+                        <span class="font-semibold">CURP Biométrica, inicia la cuenta regresiva: ¿Cuándo entra en vigor?, ¿tiene costo? Lo que debes saber.</span> 
+                        <a href="https://www.elfinanciero.com.mx/nacional/2025/09/26/curp-biometrica-inicia-la-cuenta-regresiva-cuando-entra-en-vigor-tiene-costo-lo-que-debes-saber/" class="text-[#bc5090] hover:underline block ml-5 text-sm">https://www.elfinanciero.com.mx/nacional/2025/09/26/curp-biometrica-inicia-la-cuenta-regresiva-cuando-entra-en-vigor-tiene-costo-lo-que-debes-saber/</a>
+                    </li>
+                    <!-- LAS DEMÁS FUENTES HAN SIDO RECORRIDAS -->
+                    <li>
+                        <span class="font-semibold">Ley General de Población (Reformada).</span> 
+                        <span class="block ml-5 mt-1 text-sm">Artículo 91 y subsecuentes (Decreto del 16 de julio de 2025) que detallan la integración de datos biométricos.</span>
+                        <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LGP.pdf" class="text-[#bc5090] hover:underline block ml-5 text-sm">https://www.diputados.gob.mx/LeyesBiblio/pdf/LGP.pdf</a>
+                    </li>
+                    <li>
+                        <span class="font-semibold">Filtración de Datos del IMSS (Noticia).</span> 
+                        <span class="block ml-5 mt-1 text-sm">"Grupo Scorpion ya vendió datos de 20 millones de derechohabientes del IMSS, revela periodista" - Artículo que sirve como antecedente de la vulnerabilidad de las bases de datos gubernamentales.</span>
+                        <a href="https://aristeguinoticias.com/2409/aristegui-en-vivo/entrevistas-completas/grupo-scorpion-ya-vendio-datos-de-20-millones-de-pensionados-del-imss-revela-periodista/" class="text-[#bc5090] hover:underline block ml-5 text-sm">https://aristeguinoticias.com/2409/aristegui-en-vivo/entrevistas-completas/grupo-scorpion-ya-vendio-datos-de-20-millones-de-pensionados-del-imss-revela-periodista/</a>
+                    </li>
+                    <li>
+                        <span class="font-semibold">Ataques de Presentación con DeepFakes.</span> 
+                        <span class="block ml-5 mt-1 text-sm">Los intentos de fraude con deepfakes han crecido un 2137% en los últimos tres años, evidenciando el riesgo de la biometría facial.</span>
+                        <a href="https://www.itdigitalsecurity.es/endpoint/2025/02/los-intentos-de-fraude-con-deepfakes-han-crecido-un-2137-en-los-ultimos-tres-anos" class="text-[#bc5090] hover:underline block ml-5 text-sm">https://www.itdigitalsecurity.es/endpoint/2025/02/los-intentos-de-fraude-con-deepfakes-han-crecido-un-2137-en-los-ultimos-tres-años</a>
+                    </li>
+                    <li>
+                        <span class="font-semibold">Voluntariedad vs. Obligatoriedad (Declaración Presidencial).</span> 
+                        <span class="block ml-5 mt-1 text-sm">Declaración de la presidenta Claudia Sheinbaum sobre la CURP biométrica, contrastando con la obligación legal de los entes privados y públicos de aceptarla.</span>
+                        <a href="https://www.elfinanciero.com.mx/nacional/2025/08/22/claudia-sheinbaum-mananera-temas-hoy-22-de-agosto-de-2025-en-vivo/" class="text-[#bc5090] hover:underline block ml-5 text-sm">https://www.elfinanciero.com.mx/nacional/2025/08/22/claudia-sheinbaum-mananera-temas-hoy-22-de-agosto-de-2025-en-vivo/</a>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#6d0010] text-white text-center py-8 px-4 mt-12">
+        <p class="max-w-3xl mx-auto">La CURP Biométrica representa una encrucijada crítica para México. Para que sus beneficios en verdad se materialicen, es indispensable una implementación con máxima transparencia técnica, supervisión ciudadana y una arquitectura de ciberseguridad robusta que proteja el activo más valioso: <strong class="font-extrabold">la identidad de las personas</strong>.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('riesgoSistemicoChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Población Total Afectada'],
+                    datasets: [{
+                        label: 'Impacto de una Brecha de Seguridad',
+                        data: [100],
+                        backgroundColor: ['#ff6361'],
+                        borderColor: ['#ffffff'],
+                        borderWidth: 4,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                },
+                                color: '#333'
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                }
+                            }
+                        },
+                        title: {
+                            display: false,
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
